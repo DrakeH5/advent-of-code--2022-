@@ -18,8 +18,16 @@ for i in range(int(len(cals))):
         eachElf[len(eachElf)-1]+= int(float(cals[i]))
     else: 
         eachElf.append(0)
+
 output = 0
+top3 = [0, 0, 0]
 for i in eachElf:
-    if i > output: 
-        output = i
-print(output)
+    if i > top3[2]: 
+        top3[2] = i
+        if top3[2] > top3[1]: 
+            top3[2] = top3[1]
+            top3[1] = i
+            if top3[1] > top3[0]:
+                top3[1] = top3[0]
+                top3[0] = i
+print(top3[0] + top3[1] + top3[2])
