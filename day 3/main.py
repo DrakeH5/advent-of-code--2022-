@@ -12,12 +12,14 @@ letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
 
 allRepeats = ""
 
-for i in range(len(rucksacks)):
+for i in range(int(len(rucksacks)/3)):
     for j in range(52):
-        if int(rucksacks[i].find(letters[j], 0, int(len(rucksacks[i])/2))) > -1:
-            search = rucksacks[i].find(letters[j], int(len(rucksacks[i])/2), int(len(rucksacks[i])))
-            if search > -1:
-                allRepeats+=rucksacks[i][search]
+        if int(rucksacks[i*3].find(letters[j], 0, int(len(rucksacks[i*3])))) > -1:
+            if rucksacks[i*3+1].find(letters[j], 0, int(len(rucksacks[i*3+1]))) > -1:
+                if rucksacks[i*3+2].find(letters[j], 0, int(len(rucksacks[i*3+2]))) > -1:
+                    allRepeats+=letters[j]
+
+
 
 total = 0
 for i in range(len(allRepeats)):
