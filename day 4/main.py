@@ -10,4 +10,8 @@ for i in input:
         results+=1
     elif e2n1 <= e1n1 and e2n2>=e1n2: 
         results+=1
+    elif e1n1>=e2n1 and e1n1 <= e2n2: 
+        results+=1
+    elif e2n1>=e1n1 and e2n1 <= e1n2:
+        results+=1 
 print(results)
